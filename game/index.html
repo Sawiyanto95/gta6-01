@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Saltline: Harbor Run</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  <canvas id="world" aria-label="Saltline city"></canvas>
+  <div id="vignette"></div>
+  <section id="title" class="screen">
+    <div class="title-mark">SALTLINE <i>›</i> HARBOR RUN</div>
+    <div class="title-panel">
+      <p class="eyebrow">A COASTAL CITY, ONE LAST JOB</p>
+      <h1>RUN THE<br><em>LOW TIDE.</em></h1>
+      <p class="story">Marina Vale is running out of time. Build a crew, move a hot car, and outrun the Harbor Patrol before the whole coast knows your name.</p>
+      <button id="begin">START THE STORY <span>↗</span></button>
+      <p class="controls-line">WASD MOVE / DRIVE · SHIFT SPRINT · SPACE JUMP / HANDBRAKE · E ENTER / EXIT · F PUNCH · R FIRE · M MISSION · ESC PAUSE</p>
+    </div>
+    <div class="title-foot"><span>PELAGIC COAST • 06:42 PM</span><span>LOCAL SAVE READY</span></div>
+  </section>
+  <section id="pause" class="screen hidden">
+    <div class="pause-panel"><p class="eyebrow">HARBOR RUN / PAUSED</p><h2>Catch your breath.</h2><button id="resume">RESUME</button><button id="save">SAVE PROGRESS</button><p id="save-note">Autosave keeps your cash and story.</p></div>
+  </section>
+  <div id="hud" class="hidden">
+    <header class="topline"><div class="brand">SALTLINE <b>/</b> HARBOR RUN</div><div class="district"><span class="live-dot"></span><span id="district">OLD QUAY</span><span class="clock" id="clock">18:42</span></div></header>
+    <div class="left-stack"><div class="mission-card"><div class="mission-head"><span id="mission-kicker">FREE ROAM</span><span id="mission-timer"></span></div><div id="objective">Find a ride. The coast is yours.</div><div class="mission-hint" id="mission-hint">M starts your next job</div></div><div class="status-row"><div class="health-box"><span>VITALS</span><div class="health-track"><i id="health-fill"></i></div></div><div class="cash-box"><span>WALLET</span><b id="cash">$1,250</b></div></div></div>
+    <div class="wanted"><span class="wanted-label">HARBOR PATROL</span><div id="stars">☆☆☆☆☆</div></div>
+    <div class="map-frame"><div class="map-title">PELAGIC COAST <small>N</small></div><canvas id="map" width="200" height="200"></canvas><div class="map-legend"><i class="you-dot"></i> YOU <i class="cop-dot"></i> PATROL <i class="job-dot"></i> JOB</div></div>
+    <div class="drive-readout hidden" id="drive"><b id="speed">00</b><span>KM/H</span><i id="vehicle-name">SABLE SEDAN</i></div>
+    <div id="toast" class="toast"></div><div class="bottomline"><span>WASD MOVE <b>·</b> E ACTION <b>·</b> M JOBS <b>·</b> ESC PAUSE</span><span id="mode-label">ON FOOT</span></div>
+  </div>
+  <div id="reticle" class="hidden">+</div>
+  <script src="vendor/three.min.js"></script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
